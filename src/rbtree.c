@@ -5,6 +5,13 @@
 rbtree *new_rbtree(void) {
   rbtree *p = (rbtree *)calloc(1, sizeof(rbtree));
   // TODO: initialize struct if needed
+  node_t *new_node = (node_t *)calloc(1, sizeof(node_t));
+
+  new_node->color = RBTREE_BLACK;
+  p->nil = new_node;
+  p->root = p->nil;
+  
+ 
   return p;
 }
 
